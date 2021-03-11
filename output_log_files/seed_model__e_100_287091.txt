@@ -1,0 +1,14 @@
+==========================================
+SLURM_JOB_ID = 287091
+SLURM_NODELIST = gnode49
+SLURM_JOB_GPUS = 2
+==========================================
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Set SLURM handle signals.
+
+  | Name    | Type   | Params
+-----------------------------------
+0 | alexnet | ResNet | 11 M  
+Validation sanity check: 0it [00:00, ?it/s]slurmstepd: error: *** JOB 287091 ON gnode49 CANCELLED AT 2020-12-26T14:06:53 ***

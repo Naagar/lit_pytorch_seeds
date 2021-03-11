@@ -1,0 +1,54 @@
+==========================================
+SLURM_JOB_ID = 278319
+SLURM_NODELIST = gnode30
+SLURM_JOB_GPUS = 3
+==========================================
+Using cache found in /home/sandeep.nagar/.cache/torch/hub/pytorch_vision_v0.6.0
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Set SLURM handle signals.
+
+  | Name    | Type    | Params
+------------------------------------
+0 | alexnet | AlexNet | 61 M  
+Validation sanity check: 0it [00:00, ?it/s]Traceback (most recent call last):
+  File "main.py", line 148, in <module>
+    trainer.fit(model)
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 439, in fit
+    results = self.accelerator_backend.train()
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/pytorch_lightning/accelerators/gpu_accelerator.py", line 54, in train
+    results = self.train_or_test()
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/pytorch_lightning/accelerators/accelerator.py", line 66, in train_or_test
+    results = self.trainer.train()
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 461, in train
+    self.run_sanity_check(self.get_model())
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 647, in run_sanity_check
+    _, eval_results = self.run_evaluation(test_mode=False, max_batches=self.num_sanity_val_batches)
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 555, in run_evaluation
+    for batch_idx, batch in enumerate(dataloader):
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 363, in __next__
+    data = self._next_data()
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 989, in _next_data
+    return self._process_data(data)
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1014, in _process_data
+    data.reraise()
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/torch/_utils.py", line 395, in reraise
+    raise self.exc_type(msg)
+FileNotFoundError: Caught FileNotFoundError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 185, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/sandeep.nagar/lit_pytorch_seeds/load_data.py", line 94, in __getitem__
+    X = self.get_image_from_folder(self.img_names[index])
+  File "/home/sandeep.nagar/lit_pytorch_seeds/load_data.py", line 78, in get_image_from_folder
+    image = Image.open(os.path.join(self.img_dir, name))
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/PIL/Image.py", line 2878, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'data_plus_fake/validation/name'
+
+                                           

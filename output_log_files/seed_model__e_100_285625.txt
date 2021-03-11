@@ -1,0 +1,23 @@
+==========================================
+SLURM_JOB_ID = 285625
+SLURM_NODELIST = gnode55
+SLURM_JOB_GPUS = 3
+==========================================
+Traceback (most recent call last):
+  File "main.py", line 37, in <module>
+    train_dataset = seeds_dataset(train_txt_path,train_img_dir)
+  File "/home/sandeep.nagar/lit_pytorch_seeds/load_data.py", line 55, in __init__
+    self.data_info = pd.read_csv(txt_path, header=None)
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py", line 676, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py", line 448, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py", line 880, in __init__
+    self._make_engine(self.engine)
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py", line 1114, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/home/sandeep.nagar/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py", line 1891, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 374, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] File data/new_train_data_file.csv does not exist: 'data/new_train_data_file.csv'
